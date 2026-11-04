@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My Love ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#ffe0ec,#ffc1d9,#f8d8ff);
+    color: #70264a;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Navigation */
+nav {
+    background: #ffffffbb;
+    padding: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+    color: #e60073;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+nav button {
+    border: none;
+    background: transparent;
+    color: #a52b66;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+nav button:hover {
+    background: #ffe0ec;
+    border-radius: 20px;
+}
+
+/* Music */
+.music-btn {
+    position: fixed;
+    right: 15px;
+    bottom: 20px;
+    z-index: 10;
+    background: #e60073;
+    color: white;
+    border: none;
+    padding: 13px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+/* Pages */
+.page {
+    display: none;
+    min-height: 75vh;
+    padding: 45px 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.page.active {
+    display: flex;
+    animation: fade 0.7s;
+}
+
+.content {
+    width: 100%;
+    max-width: 850px;
+    margin: auto;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    color: #e60073;
+    font-size: clamp(35px,7vw,60px);
+    margin-bottom: 15px;
+}
+
+h2 {
+    color: #a52b66;
+    margin-bottom: 15px;
+}
+
+p {
+    line-height: 1.8;
+}
+
+.small-title {
+    color: #c43c7b;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.description {
+    font-size: 18px;
+    max-width: 650px;
+    margin: 20px auto;
+}
+
+/* Buttons */
+.main-btn {
+    background: linear-gradient(45deg,#e60073,#ff69a6);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 14px 28px;
+    margin-top: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.main-btn:hover {
+    transform: scale(1.06);
+}
+
+/* Wishes */
+.wish-card {
+    background: #ffffffcc;
+    padding: 22px;
+    margin: 18px auto;
+    border-radius: 18px;
+    max-width: 650px;
+    box-shadow: 0 5px 15px #a52b6622;
+}
+
+/* Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
+    max-width: 650px;
+    margin: 25px auto;
+}
+
+.gallery img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 5px solid white;
+}
+
+/* Video */
+.video-box {
+    max-width: 450px;
+    margin: 25px auto;
+}
+
+video {
+    width: 100%;
+    border: 5px solid white;
+    border-radius: 20px;
+}
+
+/* Letter */
+.letter {
+    background: #fffafc;
+    padding: 35px;
+    border-radius: 20px;
+    max-width: 650px;
+    margin: 25px auto;
+    text-align: left;
+    line-height: 2;
+    border: 2px solid #ffc1d9;
+}
+
+.letter p {
+    margin: 15px 0;
+}
+
+.letter h3 {
+    text-align: right;
+    color: #e60073;
+}
+
+/* Gift */
+.gift {
+    font-size: 120px;
+    cursor: pointer;
+    display: inline-block;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Page Navigation */
+.page-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding: 20px;
+}
+
+.page-navigation button {
+    padding: 10px 18px;
+    border: none;
+    background: #e60073;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* Hearts */
+#hearts {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.heart {
+    position: absolute;
+    bottom: -30px;
+    animation: floatUp 7s linear forwards;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+nav, main, footer, .page-navigation {
+    position: relative;
+    z-index: 1;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+}
+
+@media(max-width:600px) {
+    nav {
+        justify-content: center;
+    }
+
+    .nav-links {
+        justify-content: center;
+    }
+
+    .gallery img {
+        height: 150px;
+    }
+
+    .letter {
+        padding: 20px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+}
+/* Password Security Page */
+#loginPage {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: linear-gradient(135deg,#ffe0ec,#ffc1d9,#f8d8ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-box {
+    background: white;
+    padding: 40px 25px;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 5px 25px #a52b6633;
+}
+
+.login-box h1 {
+    font-size: 35px;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 14px;
+    margin-top: 20px;
+    border: 2px solid #ffc1d9;
+    border-radius: 25px;
+    outline: none;
+    font-size: 16px;
+    text-align: center;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 20px;
+    background: #e60073;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#errorMessage {
+    color: red;
+    margin-top: 15px;
+}
+</style>
+</head>
+
+<body>
+
+    <!-- Password Security -->
+
+<div id="loginPage">
+
+    <div class="login-box">
+
+        <div style="font-size:60px;">🔐❤️</div>
+
+        <h1>Private Surprise!</h1>
+
+        <h2>Only For You 💗</h2>
+
+        <p>Enter Your Secret Password</p>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter Password"
+        >
+
+        <button onclick="checkPassword()">
+            Unlock My Surprise ❤️
+        </button>
+
+        <p id="errorMessage"></p>
+
+    </div>
+
+</div>
+
+<!-- Background Music -->
+<audio id="bgMusic" loop>
+    <source src="hari_bdy.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" id="musicBtn" onclick="toggleMusic()">
+    🎵 Play Music
+</button>
+
+<div id="hearts"></div>
+
+<!-- Navigation -->
+<nav>
+    <div class="logo">My Love ❤️</div>
+
+    <div class="nav-links">
+        <button onclick="showPage(0)">Home</button>
+        <button onclick="showPage(1)">Wishes</button>
+        <button onclick="showPage(2)">Gallery</button>
+        <button onclick="showPage(3)">Memories</button>
+        <button onclick="showPage(4)">Letter</button>
+        <button onclick="showPage(5)">Surprise</button>
+    </div>
+</nav>
+
+<main>
+
+<!-- PAGE 1 -->
+<section class="page active">
+    <div class="content">
+        <div style="font-size:65px;">🎂 🎈</div>
+        <p class="small-title">A SPECIAL DAY FOR A SPECIAL PERSON</p>
+
+        <h1>Happy Birthday</h1>
+        <h2>My Dear fraud ❤️</h2>
+
+        <p class="description">
+            Today is all about you!
+            May your life be filled with love,
+            happiness and beautiful memories.
+        </p>
+
+        <button class="main-btn" onclick="showPage(1)">
+            Start Your Surprise 💝
+        </button>
+    </div>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page">
+    <div class="content">
+        <p class="small-title">My Special Wishes</p>
+        <h1>Birthday Wishes 💗</h1>
+
+        <div class="wish-card">
+            <h2>🌹Dear fraud kutty</h2>
+            <p>
+                Happy Birthday to the most special person
+                in my life.You will always have a special place in my heart that nobody else can ever replace.
+            </p>
+        </div>
+
+        <div class="wish-card">
+            <h2>✨ Stay Happy</h2>
+            <p>
+                I wish you endless happiness, unlimited success, 
+                good health, and a lifetime full of love. May every dream come true.
+            </p>
+        </div>
+
+        <div class="wish-card">
+            <h2>❤️ Forever Special</h2>
+            <p>
+                You deserve all the beautiful things
+                in this world. Have an amazing birthday!
+            </p>
+        </div>
+
+        <button class="main-btn" onclick="showPage(2)">
+            Next Surprise ➜
+        </button>
+    </div>
+</section>
+
+<!-- PAGE 3 -->
+<section class="page">
+    <div class="content">
+        <p class="small-title">Our Beautiful Moments</p>
+        <h1>Photo Gallery 📸</h1>
+
+        <div class="gallery">
+            <img src="handhold.jpg" alt="Memory 1">
+            <img src="hug.jpg" alt="Memory 2">
+            <img src="Sunlit Couple.jpg" alt="Memory 3">
+            <img src="ssik.jpg" alt="Memory 4">
+            <img src="backhug.jpg" alt="Memory 5">
+            <img src="hands.jpg" alt="Memory 6">
+        </div>
+
+        <p class="description">
+            Every picture holds a beautiful memory ❤️
+        </p>
+
+        <button class="main-btn" onclick="showPage(3)">
+            Watch Memories 🎬
+        </button>
+    </div>
+</section>
+
+<!-- PAGE 4 -->
+<section class="page">
+    <div class="content">
+        <p class="small-title">Special Moments</p>
+        <h1>Memories 🎥</h1>
+
+        <div class="video-box">
+            <video controls>
+                <source src="hari's_bdy.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <p class="description">
+            Some moments are unforgettable.
+            Let's celebrate those memories! 💕
+        </p>
+
+        <button class="main-btn" onclick="showPage(4)">
+            Read My Letter 💌
+        </button>
+    </div>
+</section>
+
+<!-- PAGE 5 -->
+<section class="page">
+    <div class="content">
+        <p class="small-title">A Message From My Heart</p>
+        <h1>Few Words Just For You... 🫶🏻💗</h1>
+
+        
+<div class="letter">
+
+    <h2>Dear My Fraud ❤️</h2>
+
+    <h3>To My Favourite Person, ❤️</h3>
+
+    <p>
+        Happy Birthday, Hari Viknesh! 🎂💗
+    </p>
+
+    <p>
+        Today is a very special day because someone
+        who means so much to me was born.
+    </p>
+
+    <p>
+        I don't know how to explain how special you are
+        to me. You came into my life and became one of
+        my favourite parts of it.
+    </p>
+
+    <p>
+        I wish I could be beside you today, see your
+        beautiful smile and make this day unforgettable
+        for you.
+    </p>
+
+    <p>
+        I may not be able to give you the whole world,
+        but I promise that my love, care and prayers
+        will always be with you.
+    </p>
+
+    <p>
+        I wish your life is filled with endless happiness,
+        success, good health and beautiful memories.
+    </p>
+
+    <p>
+        No matter what happens in life, I hope you never
+        forget how special you are to me.
+    </p>
+
+    <h3>One More Thing... ❤️</h3>
+
+    <p>
+        If I had to choose someone again in every lifetime,
+        my heart would still search for you.
+    </p>
+
+    <p>
+        Happy Birthday once again, my favourite human! ❤️
+    </p>
+
+    <h3 class="signature">
+        With All My Love, ❤️<br>
+        Forever Yours 💗
+    </h3>
+            <h3>With Lots of Love 💗</h3>
+        </div>
+
+        <button class="main-btn" onclick="showPage(5)">
+            Open Your Gift 🎁
+        </button>
+    </div>
+</section>
+
+<!-- PAGE 6 -->
+<section class="page">
+    <div class="content">
+        <p class="small-title">One Last Surprise</p>
+        <h1>Something Special For You!</h1>
+
+        <div class="gift" id="gift" onclick="openGift()">
+            🎁
+        </div>
+
+        <p id="giftMessage" class="description">
+            Click the gift box to open your surprise!
+        </p>
+
+        <button class="main-btn" onclick="openGift()">
+            Open My Gift ❤️
+        </button>
+    </div>
+</section>
+
+</main>
+
+<!-- Previous and Next -->
+<div class="page-navigation">
+    <button onclick="previousPage()">⬅ Previous</button>
+
+    <span id="pageNumber">1 / 6</span>
+
+    <button onclick="nextPage()">Next ➜</button>
+</div>
+
+<footer>
+    Made With ❤️ Just For You
+</footer>
+
+<script>
+
+// Page Navigation
+let currentPage = 0;
+const pages = document.querySelectorAll(".page");
+
+function showPage(number) {
+
+    if(number < 0 || number >= pages.length) return;
+
+    pages.forEach(page => {
+        page.classList.remove("active");
+    });
+
+    pages[number].classList.add("active");
+
+    currentPage = number;
+
+    document.getElementById("pageNumber").innerText =
+        (currentPage + 1) + " / " + pages.length;
+
+    window.scrollTo(0,0);
+}
+
+function nextPage() {
+    if(currentPage < pages.length - 1) {
+        showPage(currentPage + 1);
+    }
+}
+
+function previousPage() {
+    if(currentPage > 0) {
+        showPage(currentPage - 1);
+    }
+}
+
+// Background Music
+const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
+
+async function toggleMusic() {
+
+    if(music.paused) {
+        try {
+            await music.play();
+            musicBtn.innerText = "⏸ Pause Music";
+        } catch(error) {
+            alert("Please add birthday.mp3 inside audio folder.");
+        }
+    } else {
+        music.pause();
+        musicBtn.innerText = "🎵 Play Music";
+    }
+}
+
+// Floating Hearts
+function createHeart() {
+
+    const heart = document.createElement("span");
+
+    heart.className = "heart";
+
+    const emojis = ["❤️","💕","💗","💖","🌸"];
+
+    heart.innerText = emojis[
+        Math.floor(Math.random() * emojis.length)
+    ];
+
+    heart.style.left = Math.random() * 100 + "%";
+    heart.style.fontSize = (15 + Math.random() * 20) + "px";
+    heart.style.animationDuration = (4 + Math.random() * 5) + "s";
+
+    document.getElementById("hearts").appendChild(heart);
+
+    setTimeout(() => heart.remove(), 9000);
+}
+
+setInterval(createHeart, 500);
+
+// Gift Surprise
+let giftOpened = false;
+
+function openGift() {
+
+    if(giftOpened) return;
+
+    giftOpened = true;
+
+    document.getElementById("gift").innerText = "💝";
+
+    document.getElementById("giftMessage").innerHTML =
+        "🎉 Happy Birthday My Love! ❤️<br><br>" +
+        "You are one of the most beautiful parts of my life.<br>" +
+        "May all your dreams come true! 🌹<br><br>" +
+        "Lots of Love Forever! 💗";
+
+    document.getElementById("gift").style.animation = "none";
+
+    for(let i = 0; i < 20; i++) {
+        setTimeout(createHeart, i * 100);
+    }
+
+    alert("🎉 Happy Birthday My Love! ❤️");
+}
+
+// Initial Page
+showPage(0);
+
+// Password Security
+
+const correctPassword = "0611";
+
+function checkPassword() {
+
+    let enteredPassword =
+        document.getElementById("password").value;
+
+    if(enteredPassword === correctPassword) {
+
+        document.getElementById("loginPage").style.display = "none";
+
+        document.getElementById("password").value = "";
+
+    } else {
+
+        document.getElementById("errorMessage").innerText =
+            "Wrong Password! Try Again ❤️";
+
+    }
+}
+</script>
+
+</body>
+</html>
